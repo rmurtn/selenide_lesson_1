@@ -1,0 +1,23 @@
+HELP.md
+build/
+!**/src/main/**
+!**/src/test/**
+
+### Intellij IDEA ###
+.idea
+.iws
+.iml
+.ipr
+
+### Gradle ###
+.gradle
+
+### Logs ###
+*.log
+
+.allure
+build
+video
+out
+allure-results
+.DS_Store
