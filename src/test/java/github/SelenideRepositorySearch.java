@@ -1,5 +1,7 @@
 package github;
 
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,8 +10,16 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideRepositorySearch {
 
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://github.com";
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.holdBrowserOpen = true;
+        Configuration.timeout = 5000;
+    }
     @Test
-    void shouldFindSelenideRepositoryAtTheTop() {
+    void shouldFindSelenideRepositoryAtTheTopTest() {
 
         // открыть главную страницу
         open("https://github.com/");
@@ -29,5 +39,16 @@ public class SelenideRepositorySearch {
         // (ASSERT)
         // ACT
         // ASSERT
+    }
+
+    @Test
+    void findJUnitCodeTest() {
+
+        open("/selenide/selenide");
+
+        $("#wiki-tab").click();
+
+
+
     }
 }
