@@ -48,7 +48,8 @@ public class SelenideRepositorySearch {
         open("/selenide/selenide");
 
         $("#wiki-tab").click();
-        $(".wiki-rightbar").$(withText("Show 3 more pages…")).click();
+//        $(".wiki-rightbar").$(withText("Show 3 more pages…")).click();
+        $(".js-wiki-more-pages").click();
         $(".wiki-rightbar").shouldHave(text("SoftAssertions"));
         $(".wiki-rightbar").$(withText("SoftAssertions")).click();
         $(".markdown-body"). shouldHave((text("@ExtendWith({SoftAssertsExtension.class})\n" +
